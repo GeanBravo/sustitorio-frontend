@@ -1,0 +1,54 @@
+<form class="example-form" style="margin-left: 70px;">
+  <mat-form-field class="example-full-width" style="width: 35%; margin-right: 10px;">
+    <mat-label>Nombres del Producto</mat-label>
+    <input matInput value="" [(ngModel)]="nombre" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+
+
+  <mat-form-field class="example-full-width" style="width: 60%; margin-right: 10px;">
+    <mat-label>Descripción del Producto</mat-label>
+    <input matInput value="" [(ngModel)]="descripcion" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+
+
+  <br>
+
+  <mat-form-field class="example-full-width" style="width: 31%; margin-right: 17px;">
+    <mat-label>Precio del Producto</mat-label>
+    <input matInput type="number" value="" [(ngModel)]="precio" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" style="width: 31%; margin-right: 17px;">
+    <mat-label>Stock del Producto</mat-label>
+    <input matInput type="number" value="" [(ngModel)]="stock" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" style="width: 31%; margin-right: 10px;">
+    <mat-label>Modelo</mat-label>
+    <input matInput #postalCode maxlength="8" placeholder="Ex. 00112233" value="" [(ngModel)]="codigo" [ngModelOptions]="{standalone: true}">
+    <mat-hint align="end">{{postalCode.value.length}} / 8</mat-hint>
+  </mat-form-field>
+</form>
+
+<button mat-raised-button color="primary" (click)="guardar()">Primary</button>
+
+
+
+<button mat-raised-button color="primary" (click)="mostrar()">Mostrar Productos</button>
+
+<div *ngFor="let p of array_productos">
+  <p>Nombre:  {{p.nombre + ' - '}}</p>
+
+
+
+  <p>Descripcion: + </p> {{p.descripcion}}
+
+
+  <p>Precio: + </p> {{p.precio}}
+
+  <p>Stock: + </p> {{p.Stock}}
+
+
+  <p>Codigo: + </p> {{p.codigo}}
+
+</div>

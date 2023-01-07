@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+    <span>Sustitutorio</span>
+
+    <button mat-button routerLink="/admin/coffes" class="ms-2">Clientes</button>
+    <button mat-button routerLink="/admin/orders" class="ms-2">Reportes</button>
+
+    <span class="spacer"></span>
+
+
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="signOut()">
+        <mat-icon>logout</mat-icon> Cerrar sesión
+      </button>
+    </mat-menu>
+  </mat-toolbar>
